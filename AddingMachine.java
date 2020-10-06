@@ -9,53 +9,75 @@ package cse360assignment02;
 
 public class AddingMachine {
   private int total;
+  private String operations;
 
   public AddingMachine () {
     total = 0;  // not needed - included for clarity
+    operations = "0";
   }
 
 /**
-* getTotal method should return the total value so far.
+* getTotal method returns the total value so far.
 *
-* @return 0
+* @return total
 */
 
   public int getTotal () {
-    return 0;
+    return this.total;
   }
 
 /**
-* The add method should add value to total.
+* The add method adds value to total.
+* <p> 
+* This method takes the parameter variable value and adds it
+* to the class variable total. It also appends what operation 
+* was done in the class variable operations. 
 *
 * @param value
 */
 
-  public void add (int value) { 
+  public void add (int value) {
+    this.total += value;
+    this.operations += " + " + Integer.toString(value); 
   }
 
 /**
-* The subtract method should subtract value from total.
+* The subtract method subtracts value from total.
+* <p>
+* This method takes the parameter varibale value and subtracts
+* it from the class variable total. It also append what
+* operation was done in the class variable operations. 
 *
 * @param value
 */
 
   public void subtract (int value) {
+    this.total -= value;
+    this.operations += " - " + Integer.toString(value);
   }
 
 /**
-* The toString method should show the operations done so far.
+* The toString method shows operations variable.
+* <p>
+* The operations variable has all the operations done so far and 
+* toString will return this variable.
 *
-* @return ""
+* @return operations
 */
 
   public String toString () {
-    return "";
+    return this.operations;
   }
 
 /**
-* The clear method should reset the total
+* The clear method resets total and operations
+* <p>
+* When the clear method is called it will reset the values of
+* total and operations back to 0.
 */
 
   public void clear() {
+    this.total = 0;
+    this.operations = "0";
   }
 }
